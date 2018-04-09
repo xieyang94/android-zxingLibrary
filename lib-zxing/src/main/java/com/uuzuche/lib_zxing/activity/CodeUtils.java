@@ -79,7 +79,12 @@ public class CodeUtils {
         }
         hints.put(DecodeHintType.POSSIBLE_FORMATS, decodeFormats);
         // 设置继续的字符编码格式为UTF8
-        // hints.put(DecodeHintType.CHARACTER_SET, "UTF8");
+        // 设置继续的字符编码格式为UTF8
+        hints.put(DecodeHintType.CHARACTER_SET, "utf-8");
+        //优化精度
+        hints.put(DecodeHintType.TRY_HARDER, Boolean.TRUE);
+        //复杂模式，开启PURE_BARCODE模式
+        hints.put(DecodeHintType.PURE_BARCODE, Boolean.TRUE);
         // 设置解析配置参数
         multiFormatReader.setHints(hints);
 
